@@ -1,1 +1,3 @@
-# ES6 Syntax
+# ES6
+
+* [new syntax]('syntax.html') 
