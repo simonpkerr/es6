@@ -156,4 +156,68 @@ describe('String extensions', () => {
 
         assert.equal(result, true);
     });
+
+    it('contain an "endsWith" property', () => {
+        const str = 'Hi there my friend';
+        const result = str.endsWith('friend');
+
+        assert.equal(result, true);
+    });
+
+    it('contain an "includes" property', () => {
+        const str = 'my my my, Hi there my friend';
+        const result = str.includes('my');
+
+        assert.equal(result, true);
+    });
+
+    it('allow unicode symbols', () => {
+        // this is the unicode sequence for the surfer emoji
+        const s = 'Surfers \u{1f3c4} beach';
+
+        assert.equal(s, 'Surfers \u{1f3c4} beach');
+
+    });
+
+    it('include a "repeat" function', () => {
+        const s = 'a-';
+        const repeatedS = s.repeat(3);
+
+        assert.equal(repeatedS, 'a-a-a-');
+
+    });
+});
+
+describe('Number extensions', () => {
+    it('contain a parseInt function', () => {
+
+        assert.strictEqual(Number.parseInt, parseInt);
+    });
+
+    it('properly evaluate isNaN', () => {
+
+        const s = 'NaN';
+        const result = Number.isNaN(s);
+        const es5Result = isNaN(s);
+
+        assert.equal(result, false);
+
+        // es5 would convert the string to an actual NaN value
+        assert.equal(es5Result, true);
+    });
+
+    it('contain an "isInteger" function', () => {
+
+        const val = 9.5;
+        const result = Number.isInteger(val);
+
+        assert.equal(Number.isInteger(9.5), false);
+        assert.equal(Number.isInteger(NaN), false);
+        assert.equal(Number.isInteger(Infinity), false);
+        assert.equal(Number.isInteger(undefined), false);
+        assert.equal(Number.isInteger(3), true);
+
+    });
+
+
 });
