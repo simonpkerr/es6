@@ -1,24 +1,5 @@
 const assert = chai.assert;
 
-xdescribe('Modules', () => {
-
-    describe('Import / Export', () => {
-        it('should throw error exported variables are imported and changed', () => {
-
-            //import { productId } from './modules-classes/module1.js';
-
-            const f = () => {
-                productId = 1234;
-                return productId;
-            };
-
-            assert.throws(f, 'productId is not defined');
-        });
-
-    });
-
-});
-
 describe('Classes', () => {
 
     it('can be created', () => {
