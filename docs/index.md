@@ -1,3 +1,3 @@
 # ES6
 
-* [new syntax](syntax.html) 
+* [new syntax](../syntax.html) 
